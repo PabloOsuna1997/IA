@@ -7,11 +7,11 @@ function reflex_agent(location, state) {
     else if (location == "B") return "LEFT";
 }
 
-function test(states2) {
+function test(allStates) {
     if (index == 7) {
         document.getElementById("log").innerHTML += "<br><span style='color:red'>All 8 states are clean. </span>";
     } else {
-        var currentState = states2[index]
+        var currentState = allStates[index]
         var location = currentState[0];
         var state = currentState[0] == "A" ? currentState[1] : currentState[2];
         var action_result = reflex_agent(location, state);
@@ -23,14 +23,14 @@ function test(states2) {
         else if (action_result == "RIGHT") currentState[0] = "B";
         else if (action_result == "LEFT") currentState[0] = "A";
         numeroEstado += 1;
-        states2[index] = currentState;
+        allStates[index] = currentState;
         if (numeroEstado % 4 === 0) {
             index += 1;
-            document.getElementById("log").innerHTML += "<br><span style='color:green'>State: ->".concat(states2[index][0] + ' - ' + states2[index][1] + ' - ' + states2[index][2]).concat("</span>");;
+            document.getElementById("log").innerHTML += "<br><span style='color:green'>State: ->".concat(allStates[index][0] + ' - ' + allStates[index][1] + ' - ' + allStates[index][2]).concat("</span>");;
         }
     }
 
-    setTimeout(function () { test(states2); }, 2000);
+    setTimeout(function () { test(allStates); }, 2000);
 }
 
 

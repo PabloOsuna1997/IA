@@ -24,7 +24,8 @@ function test(allStates) {
         else if (action_result == "LEFT") currentState[0] = "A";
         numeroEstado += 1;
         allStates[index] = currentState;
-        if (numeroEstado % 4 === 0) {
+        if (numeroEstado == 4) {
+            numeroEstado = 0;
             index += 1;
             document.getElementById("log").innerHTML += "<br><span style='color:green'>State: ->".concat(allStates[index][0] + ' - ' + allStates[index][1] + ' - ' + allStates[index][2]).concat("</span>");;
         }

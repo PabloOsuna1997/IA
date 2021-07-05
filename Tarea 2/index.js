@@ -9,7 +9,7 @@ function reflex_agent(location, state) {
 
 function test(states2) {
     if (index == 7) {
-        document.getElementById("log").innerHTML += "<br><span style='color:red'>Ha pasado por los 8 estados! </span>";
+        document.getElementById("log").innerHTML += "<br><span style='color:red'>All 8 states are clean. </span>";
     } else {
         var currentState = states2[index]
         var location = currentState[0];
@@ -26,7 +26,7 @@ function test(states2) {
         states2[index] = currentState;
         if (numeroEstado % 4 === 0) {
             index += 1;
-            document.getElementById("log").innerHTML += "<br>&nbsp;<span style='color:green'>&nbsp;State: ->".concat(states2[index][0] + ' - ' + states2[index][1] + ' - ' + states2[index][2]).concat("</span>");;
+            document.getElementById("log").innerHTML += "<br><span style='color:green'>State: ->".concat(states2[index][0] + ' - ' + states2[index][1] + ' - ' + states2[index][2]).concat("</span>");;
         }
     }
 
